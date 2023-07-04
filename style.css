@@ -66,12 +66,13 @@ label{
 .result{
     font-family: 'Raleway', sans-serif;
     display: grid;
-    grid-template-columns: 350px 90px 280px;
+    grid-template-columns: 350px 90px 280px 350px;
     grid-template-areas: 
-    "i la a"
-    "i lpr p"
-    "i lr r"
-    "i lpark park";
+    "i la a f"
+    "i lpr p f"
+    "i lr r f"
+    "i lpark park f"
+    "i lim im f";
     box-shadow: 1px 1px 3px #0a1612;
     margin: 20px;
     padding: 20px;
@@ -130,7 +131,9 @@ button:active{background-color: #443729;}
     grid-area: lpark;
 }
 
-.result>.l-immediate{}
+.result>.l-immediate{
+    grid-area: lim;
+}
 
 .result>.address{
     grid-area: a;
@@ -148,7 +151,13 @@ button:active{background-color: #443729;}
     grid-area: park;
 }
 
-.result>.immediate{}
+.result>.immediate{
+    grid-area: im;
+}
+
+.result>.features {
+    grid-area: f;
+}
 
 .no-match{
     color: #DD6300;

@@ -35,6 +35,48 @@
 
     <div id="results"></div>
 
+    <script id="apt-template" type="text/text/x-handlebars-template">
+        {{#each apts}}
+            <div class="result">
+                <img src="{{img}}" alt="" />
+                <div class="l-addr">Adress</div>
+                <div class="address">{{address}}</div>
+                <div class="l-price">Price</div>
+                <div class="price">{{price}}</div>
+                <div class="l-rooms">Rooms</div>
+                <div class="rooms">{{rooms}}</div>
+                <div class="l-rooms">Rooms</div>
+                <div class="rooms">{{rooms}}</div>
+                <div class="l-park">Parking</div>
+                <div class="park">
+                    {{#if parking}}
+                        yes
+                    {{/if}}
+                    {{#unless parking}}
+                        no
+                    {{/unless}}
+                </div>
+                <div class="l-immediate">{{#if immediate}}Contact{{/if}}</div>
+                <div class="immediate">
+                    {{#if immediate}}
+                        {{contactDetails.name}} 
+                        <a href="mail-to:{{contactDetails.email}}">{{contactDetails.email}}</a>
+                    {{/if}}
+                </div>
+                {{#if features}}
+                    <div class="features">
+                        {{#each features}}
+                            <p>{{.}}</p>
+                        {{/each}}
+                    </div>
+                {{/if}}
+            </div>
+        {{/each}}
+        {{#unless apts}}
+            <div class="no-match">Nothing found</div>
+        {{/unless}}
+    </script>
+
     <!-- Your Code Here -->
     <!-- You should start doing handlebar stuff here -->
     <!-- Your Code Here -->
